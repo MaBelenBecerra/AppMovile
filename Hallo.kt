@@ -3,8 +3,8 @@ fun saludarPersona(saludo: String = "Hola", nombreCompleto: String) {
     
 }
 
-fun obtenerMensajeGenero(genero: String): String {
-    return "Mi genero es $genero"
+fun obtenerMensajeGenero(genero: String) {
+    println("Mi genero es $genero")
 }
 
 fun main() {
@@ -29,9 +29,7 @@ fun main() {
 	println("Mi genero: $genero")
     
     
-    saludarPersona(nombreCompleto = "Maria Belen Becerra Rivera")
-
-	val mensajeGenero = obtenerMensajeGenero("Femenino")
-	println(mensajeGenero)
+    saludarPersona(nombreCompleto = "Maria Belen Becerra Rivera") //Hola, Maria Belen Becerra Rivera
+    obtenerMensajeGenero(genero) //Mi genero es Femenino
 }
 
