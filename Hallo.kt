@@ -3,8 +3,8 @@ fun saludarPersona(saludo: String = "Hola", nombreCompleto: String) {
     
 }
 
-fun obtenerMensajeGenero(genero: String): String {
-    return "Mi genero es $genero"
+fun obtenerMensajeGenero(genero: String) {
+    println("Mi genero es $genero")
 }
 
 fun main() {
@@ -30,8 +30,6 @@ fun main() {
     
     
     saludarPersona(nombreCompleto = "Maria Belen Becerra Rivera")
-
-	val mensajeGenero = obtenerMensajeGenero("Femenino")
-	println(mensajeGenero)
+    obtenerMensajeGenero(genero)
 }
 
