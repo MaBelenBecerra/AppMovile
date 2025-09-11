@@ -1,35 +1,39 @@
-fun saludarPersona(saludo: String = "Hola", nombreCompleto: String) {
-    println("$saludo, $nombreCompleto")
-    
+
+enum class Genero {
+	Mujer, Hombre, Otro
 }
 
-fun obtenerMensajeGenero(genero: String) {
-    println("Mi genero es $genero")
+fun saludo(mensaje: String, nombre: String) {
+	println("$mensaje $nombre")
+}
+
+fun generoComoTexto(genero: Genero): String {
+	return when (genero) {
+		Genero.Hombre -> "Hombre"
+		Genero.Mujer -> "Mujer"
+		Genero.Otro -> "Otro"
+	}
+}
+
+fun mostrarGenero(genero: Genero) {
+	println("Mi genero es: ${generoComoTexto(genero)}")
 }
 
 fun main() {
-    val nombreCompleto = "Maria Belen Becerra Rivera"
-    val nombreMateria = "Aplicaciones Moviles"
-
-    println("$nombreCompleto, $nombreMateria.")
-    
-    var peso: Int = 60
-	println("Mi peso: $peso kg")
-
-	var altura: Double = 1.69
-	println("Mi altura: $altura m")
-
-	var edad: Int = 21
-	println("Mi edad: $edad años")
-
-	var esEdadPar: Boolean = edad % 2 == 0
-	println("¿Mi edad es par?: $esEdadPar")
-
-	var genero: String = "Femenino"
-	println("Mi genero: $genero")
-    
-    
-    saludarPersona(nombreCompleto = "Maria Belen Becerra Rivera") //Hola, Maria Belen Becerra Rivera
-    obtenerMensajeGenero(genero) //Mi genero es Femenino
+	val nombre = "Maria Belen Becerra Rivera"
+	saludo("Hola a todos, yo soy:", nombre) //Hola a todos, yo soy: Maria Belen Becerra Rivera
+	val materia = "Aplicaciones Moviles"
+	println("La materia es: $materia")
+	val peso : Int = 60
+	val altura : Double = 1.69
+	var edad : Int = 21
+	println("Yo peso: $peso kg")
+	println("Y mido: $altura metros")
+	println("Tengo $edad años")
+	var es_par : Boolean = (edad % 2 == 0)
+	if (es_par) { println("Mi edad es par.") }
+	else { println("Mi edad es impar.") }
+	val genero = Genero.Mujer
+	println(generoComoTexto(genero))
 }
 
